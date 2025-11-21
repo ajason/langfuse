@@ -78,4 +78,5 @@ web/test-results/*
 
 # Refactoring planning files (local only)
 **/.refactor/
-data
+
+data/
