@@ -14,7 +14,10 @@ export function TimelineRow({
   item,
   isSelected,
   onSelect,
+<<<<<<< HEAD
   onHover,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   onToggleCollapse,
   hasChildren,
   isCollapsed,
@@ -96,7 +99,10 @@ export function TimelineRow({
         metrics={metrics}
         isSelected={isSelected}
         onSelect={onSelect}
+<<<<<<< HEAD
         onHover={onHover}
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
         showDuration={showDuration}
         showCostTokens={showCostTokens}
         showScores={showScores}

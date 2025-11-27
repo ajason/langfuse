@@ -31,7 +31,10 @@ export interface TimelineBarProps {
   metrics: TimelineMetrics;
   isSelected: boolean;
   onSelect: () => void;
+<<<<<<< HEAD
   onHover?: () => void;
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   // View preferences
   showDuration: boolean;
   showCostTokens: boolean;
@@ -68,7 +71,10 @@ export interface TimelineRowProps {
   item: FlatTimelineItem;
   isSelected: boolean;
   onSelect: () => void;
+<<<<<<< HEAD
   onHover?: () => void;
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   onToggleCollapse: () => void;
   hasChildren: boolean;
   isCollapsed: boolean;

@@ -4,15 +4,19 @@ export type UsePrefetchObservationParams = {
   projectId: string;
 };
 
+<<<<<<< HEAD
 /**
  * Hook to prefetch observation data on hover.
  * Matches the old trace component's prefetch behavior with 5-minute staleTime.
  */
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 export function usePrefetchObservation({
   projectId,
 }: UsePrefetchObservationParams) {
   const utils = api.useUtils();
 
+<<<<<<< HEAD
   const prefetch = (
     observationId: string,
     traceId: string,
@@ -29,6 +33,14 @@ export function usePrefetchObservation({
         staleTime: 5 * 60 * 1000, // 5 minutes - matches old trace behavior
       },
     );
+=======
+  const prefetch = (observationId: string, traceId: string) => {
+    void utils.observations.byId.prefetch({
+      observationId,
+      traceId,
+      projectId,
+    });
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   };
 
   return { prefetch };

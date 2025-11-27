@@ -265,6 +265,7 @@ function buildTreeNodesBottomUp(
     // Use pre-calculated depth from ProcessingNode
     const depth = currentNode.depth;
 
+<<<<<<< HEAD
     // Calculate childrenDepth (max depth of subtree rooted at this node)
     // Leaf nodes have childrenDepth = 0
     // Parent nodes have childrenDepth = max(children.childrenDepth) + 1
@@ -273,6 +274,8 @@ function buildTreeNodesBottomUp(
         ? Math.max(...childTreeNodes.map((c) => c.childrenDepth)) + 1
         : 0;
 
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     // Create TreeNode
     const treeNode: TreeNode = {
       id: obs.id,
@@ -294,7 +297,10 @@ function buildTreeNodesBottomUp(
       startTimeSinceTrace,
       startTimeSinceParentStart,
       depth,
+<<<<<<< HEAD
       childrenDepth,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     };
 
     // Store in registry and nodeMap
@@ -351,7 +357,10 @@ function buildTraceTree(
       startTimeSinceTrace: 0,
       startTimeSinceParentStart: null,
       depth: -1,
+<<<<<<< HEAD
       childrenDepth: 0,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     };
     const nodeMap = new Map<string, TreeNode>();
     nodeMap.set(emptyTree.id, emptyTree);
@@ -388,12 +397,15 @@ function buildTraceTree(
     undefined,
   );
 
+<<<<<<< HEAD
   // Calculate trace root childrenDepth
   const traceChildrenDepth =
     rootTreeNodes.length > 0
       ? Math.max(...rootTreeNodes.map((c) => c.childrenDepth)) + 1
       : 0;
 
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   // Create trace root node
   const tree: TreeNode = {
     id: `trace-${trace.id}`,
@@ -407,7 +419,10 @@ function buildTraceTree(
     startTimeSinceTrace: 0,
     startTimeSinceParentStart: null,
     depth: -1,
+<<<<<<< HEAD
     childrenDepth: traceChildrenDepth,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   };
 
   nodeMap.set(tree.id, tree);

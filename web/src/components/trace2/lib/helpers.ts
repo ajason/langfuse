@@ -289,14 +289,26 @@ function buildTraceTree(
     traceStartTime: Date,
     parentStartTime: Date | null,
     depth: number,
+<<<<<<< HEAD
   ): TreeNode => {
     const children = obs.children.map((child) =>
+=======
+  ): TreeNode => ({
+    id: obs.id,
+    type: obs.type,
+    name: obs.name ?? "",
+    startTime: obs.startTime,
+    endTime: obs.endTime,
+    level: obs.level,
+    children: obs.children.map((child) =>
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       convertObservationToTreeNode(
         child,
         traceStartTime,
         obs.startTime,
         depth + 1,
       ),
+<<<<<<< HEAD
     );
 
     // Calculate childrenDepth (max depth of subtree rooted at this node)
@@ -330,6 +342,24 @@ function buildTraceTree(
       childrenDepth,
     };
   };
+=======
+    ),
+    inputUsage: obs.inputUsage,
+    outputUsage: obs.outputUsage,
+    totalUsage: obs.totalUsage,
+    calculatedInputCost: obs.inputCost,
+    calculatedOutputCost: obs.outputCost,
+    calculatedTotalCost: obs.totalCost,
+    parentObservationId: obs.parentObservationId,
+    traceId: obs.traceId,
+    startTimeSinceTrace: obs.startTime.getTime() - traceStartTime.getTime(),
+    startTimeSinceParentStart:
+      parentStartTime !== null
+        ? obs.startTime.getTime() - parentStartTime.getTime()
+        : null,
+    depth,
+  });
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   // Convert and enrich children with pre-computed costs and populate nodeMap
   const enrichedChildren = nestedObservations
@@ -345,12 +375,15 @@ function buildTraceTree(
     undefined,
   );
 
+<<<<<<< HEAD
   // Calculate childrenDepth for trace root
   const traceChildrenDepth =
     enrichedChildren.length > 0
       ? Math.max(...enrichedChildren.map((c) => c.childrenDepth)) + 1
       : 0;
 
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   // Create the root tree node (trace)
   // Use a unique ID for the trace root to avoid conflicts with observations that might have the same ID
   const tree: TreeNode = {
@@ -365,7 +398,10 @@ function buildTraceTree(
     startTimeSinceTrace: 0,
     startTimeSinceParentStart: null,
     depth: -1,
+<<<<<<< HEAD
     childrenDepth: traceChildrenDepth,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   };
 
   // Add trace root to nodeMap as well
@@ -492,9 +528,13 @@ export function downloadTraceAsJson(params: {
   };
 
   const jsonString = JSON.stringify(exportData, null, 2);
+<<<<<<< HEAD
   const blob = new Blob([jsonString], {
     type: "application/json; charset=utf-8",
   });
+=======
+  const blob = new Blob([jsonString], { type: "application/json" });
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   const url = URL.createObjectURL(blob);
 
   const link = document.createElement("a");

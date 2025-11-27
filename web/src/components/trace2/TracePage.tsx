@@ -8,12 +8,15 @@ import { ErrorPage } from "@/src/components/error-page";
 import { DeleteTraceButton } from "@/src/components/deleteButton";
 import Page from "@/src/components/layouts/page";
 import { Trace } from "@/src/components/trace2/Trace";
+<<<<<<< HEAD
 import { useSession } from "next-auth/react";
 import { useIsAuthenticatedAndProjectMember } from "@/src/features/auth/hooks";
 import { Button } from "@/src/components/ui/button";
 import Link from "next/link";
 import { stripBasePath } from "@/src/utils/redirect";
 import { Badge } from "@/src/components/ui/badge";
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
 export function TracePage({
   traceId,
@@ -23,14 +26,21 @@ export function TracePage({
   timestamp?: Date;
 }) {
   const router = useRouter();
+<<<<<<< HEAD
   const session = useSession();
   const routeProjectId = (router.query.projectId as string) ?? "";
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   const trace = api.traces.byIdWithObservationsAndScores.useQuery(
     {
       traceId,
       timestamp,
+<<<<<<< HEAD
       projectId: routeProjectId,
+=======
+      projectId: router.query.projectId as string,
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     },
     {
       retry(failureCount, error) {
@@ -44,11 +54,14 @@ export function TracePage({
     },
   );
 
+<<<<<<< HEAD
   const projectIdForAccessCheck = trace.data?.projectId ?? routeProjectId;
   const hasProjectAccess = useIsAuthenticatedAndProjectMember(
     projectIdForAccessCheck,
   );
 
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   const [selectedTab, setSelectedTab] = useQueryParam(
     "display",
     withDefault(StringParam, "details"),
@@ -71,6 +84,7 @@ export function TracePage({
 
   if (!trace.data) return <div className="p-3">Loading...</div>;
 
+<<<<<<< HEAD
   const isSharedTrace = trace.data.public;
   const showPublicIndicators = isSharedTrace && !hasProjectAccess;
   const encodedTargetPath = encodeURIComponent(
@@ -107,6 +121,8 @@ export function TracePage({
     </Badge>
   ) : undefined;
 
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   return (
     <Page
       headerProps={{
@@ -120,9 +136,12 @@ export function TracePage({
             href: `/project/${router.query.projectId as string}/traces`,
           },
         ],
+<<<<<<< HEAD
         showSidebarTrigger: !showPublicIndicators,
         leadingControl,
         breadcrumbBadges: sharedBadge,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
         actionButtonsLeft: (
           <div className="ml-1 flex items-center gap-1">
             <div className="flex items-center gap-0">
@@ -164,7 +183,11 @@ export function TracePage({
                   ? `?${queryParams.toString()}`
                   : "";
 
+<<<<<<< HEAD
                 return `/project/${projectId as string}/traces/${entry.id}${finalQueryString}`;
+=======
+                return `/project/${projectId as string}/traces2/${entry.id}${finalQueryString}`;
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
               }}
               listKey="traces"
             />

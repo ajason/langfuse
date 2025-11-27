@@ -32,6 +32,10 @@ import {
   TabsBarTrigger,
 } from "@/src/components/ui/tabs-bar";
 import { Tabs, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
+<<<<<<< HEAD
+=======
+import useLocalStorage from "@/src/components/useLocalStorage";
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import { useMemo, useState } from "react";
 import {
   LatencyBadge,
@@ -50,7 +54,10 @@ import { PrettyJsonView } from "@/src/components/ui/PrettyJsonView";
 import { api } from "@/src/utils/api";
 import { useJsonExpansion } from "@/src/components/trace2/contexts/JsonExpansionContext";
 import { useMedia } from "@/src/components/trace2/api/useMedia";
+<<<<<<< HEAD
 import { useSelection } from "@/src/components/trace2/contexts/SelectionContext";
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
 // Header action components
 import { CopyIdsPopover } from "@/src/components/trace2/components/_shared/CopyIdsPopover";
@@ -72,6 +79,7 @@ export function ObservationDetailView({
   projectId,
   traceId,
 }: ObservationDetailViewProps) {
+<<<<<<< HEAD
   // Tab and view state from URL (via SelectionContext)
   // For observations, "log" tab doesn't apply - map to "preview"
   const {
@@ -93,6 +101,15 @@ export function ObservationDetailView({
   // Map viewPref to currentView format expected by child components
   const currentView = viewPref === "json" ? "json" : "pretty";
 
+=======
+  const [selectedTab, setSelectedTab] = useState<"preview" | "scores">(
+    "preview",
+  );
+  const [currentView, setCurrentView] = useLocalStorage<"pretty" | "json">(
+    "jsonViewPreference",
+    "pretty",
+  );
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   const [isPrettyViewAvailable, setIsPrettyViewAvailable] = useState(true);
 
   // Get comments, scores, and expansion state from contexts
@@ -145,7 +162,11 @@ export function ObservationDetailView({
   return (
     <div className="flex h-full flex-col overflow-hidden">
       {/* Header section */}
+<<<<<<< HEAD
       <div className="flex-shrink-0 space-y-2 border-b p-4">
+=======
+      <div className="flex-shrink-0 space-y-2 border-b p-4 @container">
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
         {/* Title row with actions */}
         <div className="grid w-full grid-cols-1 items-start gap-2 @2xl:grid-cols-[auto,auto] @2xl:justify-between">
           <div className="flex w-full flex-row items-start gap-1">
@@ -278,7 +299,11 @@ export function ObservationDetailView({
               className="ml-auto mr-1 h-fit px-2 py-0.5"
               value={currentView}
               onValueChange={(value) => {
+<<<<<<< HEAD
                 setViewPref(value === "json" ? "json" : "formatted");
+=======
+                setCurrentView(value as "pretty" | "json");
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
               }}
             >
               <TabsList className="h-fit py-0.5">
@@ -298,7 +323,11 @@ export function ObservationDetailView({
           value="preview"
           className="mt-0 flex max-h-full min-h-0 w-full flex-1"
         >
+<<<<<<< HEAD
           <div className="flex w-full flex-col gap-2 overflow-y-auto">
+=======
+          <div className="flex w-full flex-col gap-2 overflow-y-auto p-4">
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             <IOPreview
               key={observation.id}
               observationName={observation.name ?? undefined}

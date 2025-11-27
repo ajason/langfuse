@@ -10,7 +10,10 @@ import { useMemo } from "react";
 import { useTraceData } from "../contexts/TraceDataContext";
 import { useSearch } from "../contexts/SearchContext";
 import { useSelection } from "../contexts/SelectionContext";
+<<<<<<< HEAD
 import { useHandlePrefetchObservation } from "../hooks/useHandlePrefetchObservation";
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import { VirtualizedList } from "./_shared/VirtualizedList";
 import { TraceSearchListItem } from "./TraceSearchListItem";
 import { Button } from "@/src/components/ui/button";
@@ -20,7 +23,10 @@ export function TraceSearchList() {
   const { searchItems } = useTraceData();
   const { searchQuery, setSearchInputValue } = useSearch();
   const { selectedNodeId, setSelectedNodeId } = useSelection();
+<<<<<<< HEAD
   const { handleHover } = useHandlePrefetchObservation();
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   // Co-located filtering - only this component re-renders on search query change
   const searchResults = useMemo(() => {
@@ -72,7 +78,10 @@ export function TraceSearchList() {
           item={item}
           isSelected={isSelected}
           onSelect={onSelect}
+<<<<<<< HEAD
           onHover={() => handleHover(item.node)}
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
         />
       )}
     />

@@ -18,7 +18,10 @@ export function TimelineBar({
   metrics,
   isSelected,
   onSelect,
+<<<<<<< HEAD
   onHover,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   showDuration,
   showCostTokens,
   showScores,
@@ -42,7 +45,10 @@ export function TimelineBar({
       <div
         className="group my-0.5 flex w-full min-w-fit cursor-pointer flex-row items-center"
         onClick={onSelect}
+<<<<<<< HEAD
         onMouseEnter={onHover}
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       >
         <div
           className={cn(
@@ -127,7 +133,10 @@ export function TimelineBar({
     <div
       className="group my-0.5 flex w-full min-w-fit cursor-pointer flex-row items-center"
       onClick={onSelect}
+<<<<<<< HEAD
       onMouseEnter={onHover}
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     >
       <div className="relative" style={{ marginLeft: `${startOffset}px` }}>
         <div

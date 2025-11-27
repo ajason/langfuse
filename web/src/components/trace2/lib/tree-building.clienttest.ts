@@ -651,7 +651,11 @@ describe("buildTraceUiData", () => {
     });
   });
 
+<<<<<<< HEAD
   describe.skip("Performance Tests", () => {
+=======
+  describe("Performance Tests", () => {
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     // Helper to generate observations at scale
     const generateObservations = (
       count: number,
@@ -1088,6 +1092,7 @@ describe("buildTraceUiData", () => {
       });
     });
 
+<<<<<<< HEAD
     describe("Children Depth Calculation", () => {
       it("assigns childrenDepth 0 to leaf nodes", () => {
         const trace = createMockTrace({ id: "trace-1" });
@@ -1276,6 +1281,8 @@ describe("buildTraceUiData", () => {
       });
     });
 
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     describe("Edge Cases", () => {
       it("handles observation starting at same time as parent", () => {
         const trace = createMockTrace({

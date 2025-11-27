@@ -35,7 +35,10 @@ interface SpanContentProps {
   parentTotalDuration?: number;
   commentCount?: number;
   onSelect?: () => void;
+<<<<<<< HEAD
   onHover?: () => void;
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   className?: string;
 }
 
@@ -45,7 +48,10 @@ export function SpanContent({
   parentTotalDuration,
   commentCount,
   onSelect,
+<<<<<<< HEAD
   onHover,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   className,
 }: SpanContentProps) {
   const { scores } = useTraceData();
@@ -91,7 +97,10 @@ export function SpanContent({
         e.stopPropagation();
         onSelect?.();
       }}
+<<<<<<< HEAD
       onMouseEnter={onHover}
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       title={node.name}
       className={cn(
         "peer relative flex min-w-0 flex-1 items-start rounded-md py-0.5 pl-1 pr-2 text-left",

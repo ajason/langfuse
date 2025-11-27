@@ -49,6 +49,7 @@ export function TraceGraphDataProvider({
   traceId,
   observations,
 }: TraceGraphDataProviderProps) {
+<<<<<<< HEAD
   // Skip graph data entirely for large traces to avoid performance issues
   const exceedsThreshold = observations.length >= MAX_NODES_FOR_GRAPH_UI;
 
@@ -72,11 +73,22 @@ export function TraceGraphDataProvider({
       maxStartTime: new Date(maxTime).toISOString(),
     };
   }, [observations, exceedsThreshold]);
+=======
+  // Calculate time bounds from observations
+  const observationStartTimes = observations.map((o) => o.startTime.getTime());
+  const minStartTime = new Date(
+    Math.min(...observationStartTimes, Date.now()),
+  ).toISOString();
+  const maxStartTime = new Date(
+    Math.max(...observationStartTimes, 0),
+  ).toISOString();
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   const query = api.traces.getAgentGraphData.useQuery(
     {
       projectId,
       traceId,
+<<<<<<< HEAD
       minStartTime: minStartTime ?? "",
       maxStartTime: maxStartTime ?? "",
     },
@@ -86,6 +98,13 @@ export function TraceGraphDataProvider({
         observations.length > 0 &&
         minStartTime !== null &&
         maxStartTime !== null,
+=======
+      minStartTime,
+      maxStartTime,
+    },
+    {
+      enabled: observations.length > 0,
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchOnReconnect: false,

@@ -37,7 +37,11 @@ export function ModelBadge({
     );
   }
 
+<<<<<<< HEAD
   // Unlinked model - show create form dialog
+=======
+  // Unlinked model - show create form drawer
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   return (
     <UpsertModelFormDialog
       action="create"

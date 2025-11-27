@@ -22,13 +22,23 @@ type JsonExpansionState = {
   output: ExpandedState;
   metadata: ExpandedState;
   log: ExpandedState;
+<<<<<<< HEAD
   // Dynamic keys for per-observation log view expansion (e.g., "log:observationId")
   [key: string]: ExpandedState;
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 };
 
 interface JsonExpansionContextValue {
   expansionState: JsonExpansionState;
+<<<<<<< HEAD
   setFieldExpansion: (field: string, expansion: ExpandedState) => void;
+=======
+  setFieldExpansion: (
+    field: keyof JsonExpansionState,
+    expansion: ExpandedState,
+  ) => void;
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 const JsonExpansionContext = createContext<JsonExpansionContextValue>({
@@ -48,7 +58,11 @@ export function JsonExpansionProvider({ children }: { children: ReactNode }) {
     });
 
   const setFieldExpansion = useCallback(
+<<<<<<< HEAD
     (field: string, expansion: ExpandedState) => {
+=======
+    (field: keyof JsonExpansionState, expansion: ExpandedState) => {
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       setExpansionState((prev) => ({
         ...prev,
         [field]: expansion,
@@ -59,10 +73,14 @@ export function JsonExpansionProvider({ children }: { children: ReactNode }) {
 
   return (
     <JsonExpansionContext.Provider
+<<<<<<< HEAD
       value={{
         expansionState,
         setFieldExpansion,
       }}
+=======
+      value={{ expansionState, setFieldExpansion }}
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     >
       {children}
     </JsonExpansionContext.Provider>

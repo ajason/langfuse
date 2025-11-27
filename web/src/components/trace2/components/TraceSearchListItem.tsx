@@ -17,14 +17,20 @@ interface TraceSearchListItemProps {
   item: TraceSearchListItem;
   isSelected: boolean;
   onSelect: () => void;
+<<<<<<< HEAD
   onHover?: () => void;
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 export function TraceSearchListItem({
   item,
   isSelected,
   onSelect,
+<<<<<<< HEAD
   onHover,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }: TraceSearchListItemProps) {
   const { node, parentTotalCost, parentTotalDuration } = item;
   const { comments } = useTraceData();
@@ -41,7 +47,10 @@ export function TraceSearchListItem({
   return (
     <div
       onClick={onSelect}
+<<<<<<< HEAD
       onMouseEnter={onHover}
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       className={cn(
         "flex cursor-pointer items-start gap-2 px-2 py-1.5 transition-colors hover:bg-muted/50",
         isSelected && "bg-muted",

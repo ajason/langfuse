@@ -495,7 +495,11 @@ describe("flattenTree", () => {
     });
   });
 
+<<<<<<< HEAD
   describe.skip("Performance Tests", () => {
+=======
+  describe("Performance Tests", () => {
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     // Helper to generate tree structures at scale
     const generateTree = (
       count: number,

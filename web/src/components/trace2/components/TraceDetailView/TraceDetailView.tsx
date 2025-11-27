@@ -12,18 +12,26 @@ import {
   TabsBarTrigger,
 } from "@/src/components/ui/tabs-bar";
 import { Tabs, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
+<<<<<<< HEAD
 import { useMemo, useState } from "react";
+=======
+import useLocalStorage from "@/src/components/useLocalStorage";
+import { useEffect, useMemo, useState } from "react";
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/src/components/ui/tooltip";
+<<<<<<< HEAD
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/src/components/ui/hover-card";
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
 // Preview tab components
 import { IOPreview } from "@/src/components/trace2/components/IOPreview/IOPreview";
@@ -35,12 +43,25 @@ import { useMedia } from "@/src/components/trace2/api/useMedia";
 // Contexts and hooks
 import { useTraceData } from "@/src/components/trace2/contexts/TraceDataContext";
 import { useViewPreferences } from "@/src/components/trace2/contexts/ViewPreferencesContext";
+<<<<<<< HEAD
 import { useSelection } from "@/src/components/trace2/contexts/SelectionContext";
 import { useIsAuthenticatedAndProjectMember } from "@/src/features/auth/hooks";
 // Extracted components
 import { TraceDetailViewHeader } from "./TraceDetailViewHeader";
 import { TraceLogView } from "../TraceLogView/TraceLogView";
 import { TRACE_VIEW_CONFIG } from "@/src/components/trace2/config/trace-view-config";
+=======
+import { useIsAuthenticatedAndProjectMember } from "@/src/features/auth/hooks";
+import {
+  useLogViewConfirmation,
+  LOG_VIEW_DISABLED_THRESHOLD,
+} from "@/src/components/trace2/components/TraceLogView/useLogViewConfirmation";
+
+// Extracted components
+import { TraceDetailViewHeader } from "./TraceDetailViewHeader";
+import { TraceLogViewConfirmationDialog } from "../TraceLogView/TraceLogViewConfirmationDialog";
+import { TraceLogView } from "../TraceLogView/TraceLogView";
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import ScoresTable from "@/src/components/table/use-cases/scores";
 
 export interface TraceDetailViewProps {
@@ -60,6 +81,7 @@ export function TraceDetailView({
   scores,
   projectId,
 }: TraceDetailViewProps) {
+<<<<<<< HEAD
   // Tab and view state from URL (via SelectionContext)
   const { selectedTab, setSelectedTab, viewPref, setViewPref } = useSelection();
   const [isPrettyViewAvailable, setIsPrettyViewAvailable] = useState(true);
@@ -67,6 +89,18 @@ export function TraceDetailView({
   // Map viewPref to currentView format expected by child components
   const currentView = viewPref === "json" ? "json" : "pretty";
 
+=======
+  // Tab and view state
+  const [selectedTab, setSelectedTab] = useState<"preview" | "log" | "scores">(
+    "preview",
+  );
+  const [currentView, setCurrentView] = useLocalStorage<"pretty" | "json">(
+    "jsonViewPreference",
+    "pretty",
+  );
+  const [isPrettyViewAvailable, setIsPrettyViewAvailable] = useState(true);
+
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   // Context hooks
   const { comments } = useTraceData();
   const { expansionState, setFieldExpansion } = useJsonExpansion();
@@ -80,11 +114,31 @@ export function TraceDetailView({
     [scores],
   );
 
+<<<<<<< HEAD
   const showLogViewTab = observations.length > 0;
 
   // Check if log view will be virtualized (affects JSON tab availability)
   const isLogViewVirtualized =
     observations.length >= TRACE_VIEW_CONFIG.logView.virtualizationThreshold;
+=======
+  // Log view confirmation logic
+  const logViewConfirmation = useLogViewConfirmation({
+    observationCount: observations.length,
+    traceId: trace.id,
+  });
+
+  const showLogViewTab = observations.length > 0;
+
+  // Auto-redirect from invalid tab state
+  useEffect(() => {
+    if (
+      (logViewConfirmation.isDisabled || !showLogViewTab) &&
+      selectedTab === "log"
+    ) {
+      setSelectedTab("preview");
+    }
+  }, [logViewConfirmation.isDisabled, showLogViewTab, selectedTab]);
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   // Scores tab visibility: hide for public trace viewers and in peek mode (annotation queues)
   const { isPeekMode } = useViewPreferences();
@@ -92,11 +146,29 @@ export function TraceDetailView({
     useIsAuthenticatedAndProjectMember(projectId);
   const showScoresTab = isAuthenticatedAndProjectMember && !isPeekMode;
 
+<<<<<<< HEAD
   // Handle tab change
   const handleTabChange = (value: string) => {
     setSelectedTab(value as "preview" | "log" | "scores");
   };
 
+=======
+  // Handle tab change with log view confirmation
+  const handleTabChange = (value: string) => {
+    if (value === "log") {
+      const canProceed = logViewConfirmation.attemptLogView();
+      if (!canProceed) return;
+    }
+    setSelectedTab(value as "preview" | "log" | "scores");
+  };
+
+  // Handle log view confirmation
+  const handleLogViewConfirm = () => {
+    logViewConfirmation.confirmLogView();
+    setSelectedTab("log");
+  };
+
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   return (
     <div className="flex h-full flex-col overflow-hidden">
       {/* Header section (extracted component) */}
@@ -117,15 +189,30 @@ export function TraceDetailView({
           <TabsBarList>
             <TabsBarTrigger value="preview">Preview</TabsBarTrigger>
             {showLogViewTab && (
+<<<<<<< HEAD
               <TabsBarTrigger value="log">
+=======
+              <TabsBarTrigger
+                value="log"
+                disabled={logViewConfirmation.isDisabled}
+              >
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span>Log View</span>
                   </TooltipTrigger>
                   <TooltipContent className="text-xs">
+<<<<<<< HEAD
                     {isLogViewVirtualized
                       ? `Shows all ${observations.length} observations with virtualization enabled.`
                       : "Shows all observations concatenated. Great for quickly scanning through them."}
+=======
+                    {logViewConfirmation.isDisabled
+                      ? `Log View is disabled for traces with more than ${LOG_VIEW_DISABLED_THRESHOLD} observations (this trace has ${observations.length})`
+                      : logViewConfirmation.requiresConfirmation
+                        ? `Log View may be slow with ${observations.length} observations. Click to confirm.`
+                        : "Shows all observations concatenated. Great for quickly scanning through them. Nullish values are omitted."}
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
                   </TooltipContent>
                 </Tooltip>
               </TabsBarTrigger>
@@ -135,11 +222,15 @@ export function TraceDetailView({
             )}
 
             {/* View toggle (Formatted/JSON) - show for preview and log tabs when pretty view available */}
+<<<<<<< HEAD
             {/* JSON is disabled for virtualized log view (large traces) */}
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             {(selectedTab === "log" ||
               (selectedTab === "preview" && isPrettyViewAvailable)) && (
               <Tabs
                 className="ml-auto mr-1 h-fit px-2 py-0.5"
+<<<<<<< HEAD
                 value={
                   selectedTab === "log" && isLogViewVirtualized
                     ? "pretty"
@@ -155,12 +246,18 @@ export function TraceDetailView({
                     return;
                   }
                   setViewPref(value === "json" ? "json" : "formatted");
+=======
+                value={currentView}
+                onValueChange={(value) => {
+                  setCurrentView(value as "pretty" | "json");
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
                 }}
               >
                 <TabsList className="h-fit py-0.5">
                   <TabsTrigger value="pretty" className="h-fit px-1 text-xs">
                     Formatted
                   </TabsTrigger>
+<<<<<<< HEAD
                   {selectedTab === "log" && isLogViewVirtualized ? (
                     <HoverCard openDelay={200}>
                       <HoverCardTrigger asChild>
@@ -190,6 +287,11 @@ export function TraceDetailView({
                       JSON
                     </TabsTrigger>
                   )}
+=======
+                  <TabsTrigger value="json" className="h-fit px-1 text-xs">
+                    JSON
+                  </TabsTrigger>
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
                 </TabsList>
               </Tabs>
             )}
@@ -201,7 +303,11 @@ export function TraceDetailView({
           value="preview"
           className="mt-0 flex max-h-full min-h-0 w-full flex-1"
         >
+<<<<<<< HEAD
           <div className="flex w-full flex-col gap-2 overflow-y-auto">
+=======
+          <div className="flex w-full flex-col gap-2 overflow-y-auto p-4">
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             {/* I/O Preview */}
             <IOPreview
               key={trace.id + "-io"}
@@ -249,9 +355,17 @@ export function TraceDetailView({
           className="mt-0 flex max-h-full min-h-0 w-full flex-1"
         >
           <TraceLogView
+<<<<<<< HEAD
             traceId={trace.id}
             projectId={projectId}
             currentView={isLogViewVirtualized ? "pretty" : currentView}
+=======
+            observations={observations}
+            traceId={trace.id}
+            projectId={projectId}
+            currentView={currentView}
+            trace={trace}
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
           />
         </TabsBarContent>
 
@@ -273,6 +387,17 @@ export function TraceDetailView({
           </TabsBarContent>
         )}
       </TabsBar>
+<<<<<<< HEAD
+=======
+
+      {/* Confirmation dialog for log view with many observations (extracted component) */}
+      <TraceLogViewConfirmationDialog
+        open={logViewConfirmation.showDialog}
+        onOpenChange={logViewConfirmation.setShowDialog}
+        observationCount={observations.length}
+        onConfirm={handleLogViewConfirm}
+      />
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     </div>
   );
 }

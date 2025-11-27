@@ -15,6 +15,7 @@ import { createContext, useContext, useMemo, type ReactNode } from "react";
 import { type ObservationLevelType, ObservationLevel } from "@langfuse/shared";
 import useLocalStorage from "@/src/components/useLocalStorage";
 
+<<<<<<< HEAD
 /** Log view ordering mode */
 export type LogViewMode = "chronological" | "tree-order";
 
@@ -24,6 +25,8 @@ export type LogViewTreeStyle = "flat" | "indented";
 /** JSON view preference (formatted/pretty vs raw JSON) */
 export type JsonViewPreference = "pretty" | "json";
 
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 interface ViewPreferencesContextValue {
   showDuration: boolean;
   setShowDuration: (value: boolean) => void;
@@ -41,6 +44,7 @@ interface ViewPreferencesContextValue {
   setMinObservationLevel: (value: ObservationLevelType) => void;
   /** Whether trace is rendered in peek mode (e.g., annotation queues) */
   isPeekMode: boolean;
+<<<<<<< HEAD
   /** Log view ordering mode (chronological or tree-order) */
   logViewMode: LogViewMode;
   setLogViewMode: (value: LogViewMode) => void;
@@ -50,6 +54,8 @@ interface ViewPreferencesContextValue {
   /** JSON view preference (pretty/formatted or raw JSON) */
   jsonViewPreference: JsonViewPreference;
   setJsonViewPreference: (value: JsonViewPreference) => void;
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 const ViewPreferencesContext =
@@ -99,6 +105,7 @@ export function ViewPreferencesProvider({
       "minObservationLevel",
       ObservationLevel.DEFAULT,
     );
+<<<<<<< HEAD
   const [logViewMode, setLogViewMode] = useLocalStorage<LogViewMode>(
     "logViewMode",
     "chronological",
@@ -107,6 +114,8 @@ export function ViewPreferencesProvider({
     useLocalStorage<LogViewTreeStyle>("logViewTreeStyle", "flat");
   const [jsonViewPreference, setJsonViewPreference] =
     useLocalStorage<JsonViewPreference>("jsonViewPreference", "pretty");
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   const value = useMemo<ViewPreferencesContextValue>(
     () => ({
@@ -125,12 +134,15 @@ export function ViewPreferencesProvider({
       minObservationLevel,
       setMinObservationLevel,
       isPeekMode,
+<<<<<<< HEAD
       logViewMode,
       setLogViewMode,
       logViewTreeStyle,
       setLogViewTreeStyle,
       jsonViewPreference,
       setJsonViewPreference,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     }),
     [
       showDuration,
@@ -148,12 +160,15 @@ export function ViewPreferencesProvider({
       minObservationLevel,
       setMinObservationLevel,
       isPeekMode,
+<<<<<<< HEAD
       logViewMode,
       setLogViewMode,
       logViewTreeStyle,
       setLogViewTreeStyle,
       jsonViewPreference,
       setJsonViewPreference,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     ],
   );
 

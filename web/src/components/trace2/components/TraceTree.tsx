@@ -14,14 +14,20 @@ import { VirtualizedTreeNodeWrapper } from "./_shared/VirtualizedTreeNodeWrapper
 import { SpanContent } from "./SpanContent";
 import { useTraceData } from "../contexts/TraceDataContext";
 import { useSelection } from "../contexts/SelectionContext";
+<<<<<<< HEAD
 import { useHandlePrefetchObservation } from "../hooks/useHandlePrefetchObservation";
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import { type TreeNode } from "../lib/types";
 
 export function TraceTree() {
   const { tree, comments } = useTraceData();
   const { selectedNodeId, setSelectedNodeId, collapsedNodes, toggleCollapsed } =
     useSelection();
+<<<<<<< HEAD
   const { handleHover } = useHandlePrefetchObservation();
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   // Calculate root totals for heatmap color scaling
   // These values are used as the "max" reference for all nodes
@@ -62,7 +68,10 @@ export function TraceTree() {
               parentTotalDuration={rootTotalDuration}
               commentCount={comments.get(typedNode.id)}
               onSelect={onSelect}
+<<<<<<< HEAD
               onHover={() => handleHover(typedNode)}
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             />
           </VirtualizedTreeNodeWrapper>
         );

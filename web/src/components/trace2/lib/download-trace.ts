@@ -28,9 +28,13 @@ export function downloadTraceAsJson(params: DownloadTraceAsJsonParams): void {
   };
 
   const jsonString = JSON.stringify(exportData, null, 2);
+<<<<<<< HEAD
   const blob = new Blob([jsonString], {
     type: "application/json; charset=utf-8",
   });
+=======
+  const blob = new Blob([jsonString], { type: "application/json" });
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   const url = URL.createObjectURL(blob);
 
   const link = document.createElement("a");

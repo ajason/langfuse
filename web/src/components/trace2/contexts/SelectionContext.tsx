@@ -5,6 +5,7 @@
  * - Tracks selected node ID (synced to URL query param)
  * - Manages collapsed/expanded state for tree nodes
  * - Handles search query with debounced input
+<<<<<<< HEAD
  * - Tracks selected tab (preview/log/scores) - synced to URL query param
  * - Tracks view preference (formatted/json) - synced to URL query param AND localStorage
  *
@@ -16,6 +17,12 @@
  * Not responsible for:
  * - Trace data or tree structure - see TraceDataContext
  * - Display preferences (other than view pref) - see ViewPreferencesContext
+=======
+ *
+ * Not responsible for:
+ * - Trace data or tree structure - see TraceDataContext
+ * - Display preferences - see ViewPreferencesContext
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
  */
 
 import {
@@ -28,6 +35,7 @@ import {
 } from "react";
 import { StringParam, useQueryParam } from "use-query-params";
 import { useDebounce } from "@/src/hooks/useDebounce";
+<<<<<<< HEAD
 import {
   useViewPreferences,
   type JsonViewPreference,
@@ -41,6 +49,8 @@ const DEFAULT_TAB: DetailTab = "preview";
 // Valid view preference values
 export type ViewPref = "formatted" | "json";
 const VALID_PREFS: ViewPref[] = ["formatted", "json"];
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
 interface SelectionContextValue {
   selectedNodeId: string | null;
@@ -53,11 +63,14 @@ interface SelectionContextValue {
   searchInputValue: string;
   setSearchInputValue: (value: string) => void;
   setSearchQueryImmediate: (value: string) => void;
+<<<<<<< HEAD
   // Tab and view preference (URL-synced)
   selectedTab: DetailTab;
   setSelectedTab: (tab: DetailTab) => void;
   viewPref: ViewPref;
   setViewPref: (pref: ViewPref) => void;
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 const SelectionContext = createContext<SelectionContextValue | null>(null);
@@ -79,16 +92,20 @@ export function SelectionProvider({ children }: SelectionProviderProps) {
     "observation",
     StringParam,
   );
+<<<<<<< HEAD
   const [tabParam, setTabParam] = useQueryParam("tab", StringParam);
   const [prefParam, setPrefParam] = useQueryParam("pref", StringParam);
 
   // Get localStorage default for view preference
   const { jsonViewPreference, setJsonViewPreference } = useViewPreferences();
 
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   const [collapsedNodesArray, setCollapsedNodesArray] = useState<string[]>([]);
   const [searchInputValue, setSearchInputValue] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
+<<<<<<< HEAD
   // Validate and provide defaults for tab
   const selectedTab: DetailTab = VALID_TABS.includes(tabParam as DetailTab)
     ? (tabParam as DetailTab)
@@ -126,6 +143,8 @@ export function SelectionProvider({ children }: SelectionProviderProps) {
     [setJsonViewPreference, setPrefParam],
   );
 
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   // Debounce search query updates by 500ms for smooth typing
   const debouncedSetSearchQuery = useDebounce(setSearchQuery, 500, false);
 
@@ -182,10 +201,13 @@ export function SelectionProvider({ children }: SelectionProviderProps) {
       searchInputValue,
       setSearchInputValue: handleSearchInputChange,
       setSearchQueryImmediate,
+<<<<<<< HEAD
       selectedTab,
       setSelectedTab,
       viewPref,
       setViewPref,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     }),
     [
       currentObservationId,
@@ -198,10 +220,13 @@ export function SelectionProvider({ children }: SelectionProviderProps) {
       searchInputValue,
       handleSearchInputChange,
       setSearchQueryImmediate,
+<<<<<<< HEAD
       selectedTab,
       setSelectedTab,
       viewPref,
       setViewPref,
+=======
+>>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     ],
   );
 
