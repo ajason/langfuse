@@ -74,3 +74,4 @@ web/test-results/*
 *.local.*
 
 .claude/tsc-cache
+data
