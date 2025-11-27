@@ -17,7 +17,11 @@ import { useMemo, useState } from "react";
 =======
 import useLocalStorage from "@/src/components/useLocalStorage";
 import { useEffect, useMemo, useState } from "react";
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import {
   Tooltip,
   TooltipContent,
@@ -31,7 +35,11 @@ import {
   HoverCardTrigger,
 } from "@/src/components/ui/hover-card";
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
 // Preview tab components
 import { IOPreview } from "@/src/components/trace2/components/IOPreview/IOPreview";
@@ -61,7 +69,11 @@ import {
 import { TraceDetailViewHeader } from "./TraceDetailViewHeader";
 import { TraceLogViewConfirmationDialog } from "../TraceLogView/TraceLogViewConfirmationDialog";
 import { TraceLogView } from "../TraceLogView/TraceLogView";
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import ScoresTable from "@/src/components/table/use-cases/scores";
 
 export interface TraceDetailViewProps {
@@ -100,7 +112,11 @@ export function TraceDetailView({
   );
   const [isPrettyViewAvailable, setIsPrettyViewAvailable] = useState(true);
 
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   // Context hooks
   const { comments } = useTraceData();
   const { expansionState, setFieldExpansion } = useJsonExpansion();
@@ -138,7 +154,11 @@ export function TraceDetailView({
       setSelectedTab("preview");
     }
   }, [logViewConfirmation.isDisabled, showLogViewTab, selectedTab]);
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   // Scores tab visibility: hide for public trace viewers and in peek mode (annotation queues)
   const { isPeekMode } = useViewPreferences();
@@ -168,7 +188,11 @@ export function TraceDetailView({
     setSelectedTab("log");
   };
 
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   return (
     <div className="flex h-full flex-col overflow-hidden">
       {/* Header section (extracted component) */}
@@ -196,7 +220,11 @@ export function TraceDetailView({
                 value="log"
                 disabled={logViewConfirmation.isDisabled}
               >
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <span>Log View</span>
@@ -212,7 +240,11 @@ export function TraceDetailView({
                       : logViewConfirmation.requiresConfirmation
                         ? `Log View may be slow with ${observations.length} observations. Click to confirm.`
                         : "Shows all observations concatenated. Great for quickly scanning through them. Nullish values are omitted."}
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
                   </TooltipContent>
                 </Tooltip>
               </TabsBarTrigger>
@@ -225,7 +257,11 @@ export function TraceDetailView({
 <<<<<<< HEAD
             {/* JSON is disabled for virtualized log view (large traces) */}
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             {(selectedTab === "log" ||
               (selectedTab === "preview" && isPrettyViewAvailable)) && (
               <Tabs
@@ -250,7 +286,11 @@ export function TraceDetailView({
                 value={currentView}
                 onValueChange={(value) => {
                   setCurrentView(value as "pretty" | "json");
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
                 }}
               >
                 <TabsList className="h-fit py-0.5">
@@ -291,7 +331,11 @@ export function TraceDetailView({
                   <TabsTrigger value="json" className="h-fit px-1 text-xs">
                     JSON
                   </TabsTrigger>
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
                 </TabsList>
               </Tabs>
             )}
@@ -307,7 +351,11 @@ export function TraceDetailView({
           <div className="flex w-full flex-col gap-2 overflow-y-auto">
 =======
           <div className="flex w-full flex-col gap-2 overflow-y-auto p-4">
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             {/* I/O Preview */}
             <IOPreview
               key={trace.id + "-io"}
@@ -365,7 +413,11 @@ export function TraceDetailView({
             projectId={projectId}
             currentView={currentView}
             trace={trace}
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
           />
         </TabsBarContent>
 
@@ -397,7 +449,11 @@ export function TraceDetailView({
         observationCount={observations.length}
         onConfirm={handleLogViewConfirm}
       />
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     </div>
   );
 }

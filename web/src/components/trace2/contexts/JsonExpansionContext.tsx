@@ -26,7 +26,11 @@ type JsonExpansionState = {
   // Dynamic keys for per-observation log view expansion (e.g., "log:observationId")
   [key: string]: ExpandedState;
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 };
 
 interface JsonExpansionContextValue {
@@ -38,7 +42,11 @@ interface JsonExpansionContextValue {
     field: keyof JsonExpansionState,
     expansion: ExpandedState,
   ) => void;
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 const JsonExpansionContext = createContext<JsonExpansionContextValue>({
@@ -62,7 +70,11 @@ export function JsonExpansionProvider({ children }: { children: ReactNode }) {
     (field: string, expansion: ExpandedState) => {
 =======
     (field: keyof JsonExpansionState, expansion: ExpandedState) => {
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       setExpansionState((prev) => ({
         ...prev,
         [field]: expansion,
@@ -80,7 +92,11 @@ export function JsonExpansionProvider({ children }: { children: ReactNode }) {
       }}
 =======
       value={{ expansionState, setFieldExpansion }}
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     >
       {children}
     </JsonExpansionContext.Provider>

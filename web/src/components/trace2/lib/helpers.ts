@@ -301,7 +301,11 @@ function buildTraceTree(
     endTime: obs.endTime,
     level: obs.level,
     children: obs.children.map((child) =>
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       convertObservationToTreeNode(
         child,
         traceStartTime,
@@ -359,7 +363,11 @@ function buildTraceTree(
         : null,
     depth,
   });
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   // Convert and enrich children with pre-computed costs and populate nodeMap
   const enrichedChildren = nestedObservations
@@ -383,7 +391,11 @@ function buildTraceTree(
       : 0;
 
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   // Create the root tree node (trace)
   // Use a unique ID for the trace root to avoid conflicts with observations that might have the same ID
   const tree: TreeNode = {
@@ -401,7 +413,11 @@ function buildTraceTree(
 <<<<<<< HEAD
     childrenDepth: traceChildrenDepth,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   };
 
   // Add trace root to nodeMap as well
@@ -534,7 +550,11 @@ export function downloadTraceAsJson(params: {
   });
 =======
   const blob = new Blob([jsonString], { type: "application/json" });
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   const url = URL.createObjectURL(blob);
 
   const link = document.createElement("a");

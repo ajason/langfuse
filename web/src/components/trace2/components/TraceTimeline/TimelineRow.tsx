@@ -17,7 +17,11 @@ export function TimelineRow({
 <<<<<<< HEAD
   onHover,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   onToggleCollapse,
   hasChildren,
   isCollapsed,
@@ -102,7 +106,11 @@ export function TimelineRow({
 <<<<<<< HEAD
         onHover={onHover}
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
         showDuration={showDuration}
         showCostTokens={showCostTokens}
         showScores={showScores}

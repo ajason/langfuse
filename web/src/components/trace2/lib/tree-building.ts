@@ -275,7 +275,11 @@ function buildTreeNodesBottomUp(
         : 0;
 
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     // Create TreeNode
     const treeNode: TreeNode = {
       id: obs.id,
@@ -300,7 +304,11 @@ function buildTreeNodesBottomUp(
 <<<<<<< HEAD
       childrenDepth,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     };
 
     // Store in registry and nodeMap
@@ -360,7 +368,11 @@ function buildTraceTree(
 <<<<<<< HEAD
       childrenDepth: 0,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     };
     const nodeMap = new Map<string, TreeNode>();
     nodeMap.set(emptyTree.id, emptyTree);
@@ -405,7 +417,11 @@ function buildTraceTree(
       : 0;
 
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   // Create trace root node
   const tree: TreeNode = {
     id: `trace-${trace.id}`,
@@ -422,7 +438,11 @@ function buildTraceTree(
 <<<<<<< HEAD
     childrenDepth: traceChildrenDepth,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   };
 
   nodeMap.set(tree.id, tree);

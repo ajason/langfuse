@@ -35,7 +35,11 @@ import { Tabs, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 <<<<<<< HEAD
 =======
 import useLocalStorage from "@/src/components/useLocalStorage";
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import { useMemo, useState } from "react";
 import {
   LatencyBadge,
@@ -57,7 +61,11 @@ import { useMedia } from "@/src/components/trace2/api/useMedia";
 <<<<<<< HEAD
 import { useSelection } from "@/src/components/trace2/contexts/SelectionContext";
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
 // Header action components
 import { CopyIdsPopover } from "@/src/components/trace2/components/_shared/CopyIdsPopover";
@@ -66,7 +74,10 @@ import { AnnotateDrawer } from "@/src/features/scores/components/AnnotateDrawer"
 import { CreateNewAnnotationQueueItem } from "@/src/features/annotation-queues/components/CreateNewAnnotationQueueItem";
 import { CommentDrawerButton } from "@/src/features/comments/CommentDrawerButton";
 import { JumpToPlaygroundButton } from "@/src/features/playground/page/components/JumpToPlaygroundButton";
+<<<<<<< HEAD
 import { PromptBadge } from "@/src/components/trace2/components/_shared/PromptBadge";
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import { useTraceData } from "@/src/components/trace2/contexts/TraceDataContext";
 
 export interface ObservationDetailViewProps {
@@ -110,7 +121,11 @@ export function ObservationDetailView({
     "jsonViewPreference",
     "pretty",
   );
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   const [isPrettyViewAvailable, setIsPrettyViewAvailable] = useState(true);
 
   // Get comments, scores, and expansion state from contexts
@@ -167,7 +182,11 @@ export function ObservationDetailView({
       <div className="flex-shrink-0 space-y-2 border-b p-4">
 =======
       <div className="flex-shrink-0 space-y-2 border-b p-4 @container">
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
         {/* Title row with actions */}
         <div className="grid w-full grid-cols-1 items-start gap-2 @2xl:grid-cols-[auto,auto] @2xl:justify-between">
           <div className="flex w-full flex-row items-start gap-1">
@@ -280,12 +299,15 @@ export function ObservationDetailView({
             />
             <LevelBadge level={observation.level} />
             <StatusMessageBadge statusMessage={observation.statusMessage} />
+<<<<<<< HEAD
             {observation.promptId && (
               <PromptBadge
                 promptId={observation.promptId}
                 projectId={projectId}
               />
             )}
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
           </div>
         </div>
       </div>
@@ -310,7 +332,11 @@ export function ObservationDetailView({
                 setViewPref(value === "json" ? "json" : "formatted");
 =======
                 setCurrentView(value as "pretty" | "json");
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
               }}
             >
               <TabsList className="h-fit py-0.5">
@@ -334,7 +360,11 @@ export function ObservationDetailView({
           <div className="flex w-full flex-col gap-2 overflow-y-auto">
 =======
           <div className="flex w-full flex-col gap-2 overflow-y-auto p-4">
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             <IOPreview
               key={observation.id}
               observationName={observation.name ?? undefined}

@@ -30,7 +30,10 @@ export interface ChatMessageProps {
   currentView: ViewMode;
   toolCallNumbers?: number[];
   projectIdForPromptButtons?: string;
+<<<<<<< HEAD
   isOutputMessage?: boolean;
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 /**
@@ -48,7 +51,10 @@ export function ChatMessage({
   currentView,
   toolCallNumbers,
   projectIdForPromptButtons,
+<<<<<<< HEAD
   isOutputMessage,
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }: ChatMessageProps) {
   const [showTableView, setShowTableView] = useState(false);
 
@@ -103,7 +109,11 @@ export function ChatMessage({
     return (
       <div className={cn("transition-colors hover:bg-muted")}>
         <PrettyJsonView
+<<<<<<< HEAD
           title={title || (isOutputMessage ? "Output" : "Input")}
+=======
+          title={title || "Output"}
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
           json={message.json}
           projectIdForPromptButtons={projectIdForPromptButtons}
           currentView={currentView}
@@ -201,7 +211,11 @@ export function ChatMessage({
     return (
       <div className={cn("transition-colors hover:bg-muted")}>
         <PrettyJsonView
+<<<<<<< HEAD
           title={title || (isOutputMessage ? "Output" : "Input")}
+=======
+          title={title || "Message"}
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
           json={message}
           projectIdForPromptButtons={projectIdForPromptButtons}
           currentView={currentView}

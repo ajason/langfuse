@@ -21,7 +21,11 @@ export function TimelineBar({
 <<<<<<< HEAD
   onHover,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   showDuration,
   showCostTokens,
   showScores,
@@ -48,7 +52,11 @@ export function TimelineBar({
 <<<<<<< HEAD
         onMouseEnter={onHover}
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       >
         <div
           className={cn(
@@ -136,7 +144,11 @@ export function TimelineBar({
 <<<<<<< HEAD
       onMouseEnter={onHover}
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     >
       <div className="relative" style={{ marginLeft: `${startOffset}px` }}>
         <div

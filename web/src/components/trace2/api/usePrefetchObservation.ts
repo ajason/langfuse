@@ -10,7 +10,11 @@ export type UsePrefetchObservationParams = {
  * Matches the old trace component's prefetch behavior with 5-minute staleTime.
  */
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 export function usePrefetchObservation({
   projectId,
 }: UsePrefetchObservationParams) {
@@ -40,7 +44,11 @@ export function usePrefetchObservation({
       traceId,
       projectId,
     });
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   };
 
   return { prefetch };

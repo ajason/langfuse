@@ -18,7 +18,10 @@ export interface ChatMessageListProps {
   messageToToolCallNumbers: Map<number, number[]>;
   collapseLongHistory?: boolean;
   projectIdForPromptButtons?: string;
+<<<<<<< HEAD
   inputMessageCount?: number;
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 /**
@@ -39,7 +42,10 @@ export function ChatMessageList({
   messageToToolCallNumbers,
   collapseLongHistory = true,
   projectIdForPromptButtons,
+<<<<<<< HEAD
   inputMessageCount,
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }: ChatMessageListProps) {
   // Filter messages to only those with renderable content
   const messagesToRender = useMemo(
@@ -76,7 +82,10 @@ export function ChatMessageList({
                   currentView={currentView}
                   toolCallNumbers={messageToToolCallNumbers.get(originalIndex)}
                   projectIdForPromptButtons={projectIdForPromptButtons}
+<<<<<<< HEAD
                   isOutputMessage={originalIndex >= (inputMessageCount ?? 0)}
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
                 />
                 {/* Show collapse/expand button after first message */}
                 {isCollapsed !== null && originalIndex === 0 && (

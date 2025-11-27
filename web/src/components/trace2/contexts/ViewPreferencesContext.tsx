@@ -26,7 +26,11 @@ export type LogViewTreeStyle = "flat" | "indented";
 export type JsonViewPreference = "pretty" | "json";
 
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 interface ViewPreferencesContextValue {
   showDuration: boolean;
   setShowDuration: (value: boolean) => void;
@@ -55,7 +59,11 @@ interface ViewPreferencesContextValue {
   jsonViewPreference: JsonViewPreference;
   setJsonViewPreference: (value: JsonViewPreference) => void;
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 const ViewPreferencesContext =
@@ -115,7 +123,11 @@ export function ViewPreferencesProvider({
   const [jsonViewPreference, setJsonViewPreference] =
     useLocalStorage<JsonViewPreference>("jsonViewPreference", "pretty");
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   const value = useMemo<ViewPreferencesContextValue>(
     () => ({
@@ -142,7 +154,11 @@ export function ViewPreferencesProvider({
       jsonViewPreference,
       setJsonViewPreference,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     }),
     [
       showDuration,
@@ -168,7 +184,11 @@ export function ViewPreferencesProvider({
       jsonViewPreference,
       setJsonViewPreference,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     ],
   );
 

@@ -13,7 +13,11 @@ import { useSelection } from "../contexts/SelectionContext";
 <<<<<<< HEAD
 import { useHandlePrefetchObservation } from "../hooks/useHandlePrefetchObservation";
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import { VirtualizedList } from "./_shared/VirtualizedList";
 import { TraceSearchListItem } from "./TraceSearchListItem";
 import { Button } from "@/src/components/ui/button";
@@ -26,7 +30,11 @@ export function TraceSearchList() {
 <<<<<<< HEAD
   const { handleHover } = useHandlePrefetchObservation();
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   // Co-located filtering - only this component re-renders on search query change
   const searchResults = useMemo(() => {
@@ -81,7 +89,11 @@ export function TraceSearchList() {
 <<<<<<< HEAD
           onHover={() => handleHover(item.node)}
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
         />
       )}
     />

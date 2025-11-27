@@ -22,7 +22,11 @@
  * Not responsible for:
  * - Trace data or tree structure - see TraceDataContext
  * - Display preferences - see ViewPreferencesContext
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
  */
 
 import {
@@ -50,7 +54,11 @@ const DEFAULT_TAB: DetailTab = "preview";
 export type ViewPref = "formatted" | "json";
 const VALID_PREFS: ViewPref[] = ["formatted", "json"];
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
 interface SelectionContextValue {
   selectedNodeId: string | null;
@@ -70,7 +78,11 @@ interface SelectionContextValue {
   viewPref: ViewPref;
   setViewPref: (pref: ViewPref) => void;
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 const SelectionContext = createContext<SelectionContextValue | null>(null);
@@ -100,7 +112,11 @@ export function SelectionProvider({ children }: SelectionProviderProps) {
   const { jsonViewPreference, setJsonViewPreference } = useViewPreferences();
 
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   const [collapsedNodesArray, setCollapsedNodesArray] = useState<string[]>([]);
   const [searchInputValue, setSearchInputValue] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -144,7 +160,11 @@ export function SelectionProvider({ children }: SelectionProviderProps) {
   );
 
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   // Debounce search query updates by 500ms for smooth typing
   const debouncedSetSearchQuery = useDebounce(setSearchQuery, 500, false);
 
@@ -207,7 +227,11 @@ export function SelectionProvider({ children }: SelectionProviderProps) {
       viewPref,
       setViewPref,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     }),
     [
       currentObservationId,
@@ -226,7 +250,11 @@ export function SelectionProvider({ children }: SelectionProviderProps) {
       viewPref,
       setViewPref,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     ],
   );
 

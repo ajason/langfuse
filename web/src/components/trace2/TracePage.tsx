@@ -16,7 +16,11 @@ import Link from "next/link";
 import { stripBasePath } from "@/src/utils/redirect";
 import { Badge } from "@/src/components/ui/badge";
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
 export function TracePage({
   traceId,
@@ -30,7 +34,11 @@ export function TracePage({
   const session = useSession();
   const routeProjectId = (router.query.projectId as string) ?? "";
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   const trace = api.traces.byIdWithObservationsAndScores.useQuery(
     {
@@ -40,7 +48,11 @@ export function TracePage({
       projectId: routeProjectId,
 =======
       projectId: router.query.projectId as string,
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     },
     {
       retry(failureCount, error) {
@@ -61,7 +73,11 @@ export function TracePage({
   );
 
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   const [selectedTab, setSelectedTab] = useQueryParam(
     "display",
     withDefault(StringParam, "details"),
@@ -122,7 +138,11 @@ export function TracePage({
   ) : undefined;
 
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   return (
     <Page
       headerProps={{
@@ -141,7 +161,11 @@ export function TracePage({
         leadingControl,
         breadcrumbBadges: sharedBadge,
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
         actionButtonsLeft: (
           <div className="ml-1 flex items-center gap-1">
             <div className="flex items-center gap-0">
@@ -187,7 +211,11 @@ export function TracePage({
                 return `/project/${projectId as string}/traces/${entry.id}${finalQueryString}`;
 =======
                 return `/project/${projectId as string}/traces2/${entry.id}${finalQueryString}`;
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
               }}
               listKey="traces"
             />

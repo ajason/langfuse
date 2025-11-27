@@ -206,7 +206,11 @@ describe("json-expansion-utils", () => {
   describe.skip("Performance Tests", () => {
 =======
   describe("Performance Tests", () => {
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     // Helper to generate random 8-char hex ID
     const generateHexId = (): string => {
       return Math.random().toString(16).slice(2, 10).padEnd(8, "0");

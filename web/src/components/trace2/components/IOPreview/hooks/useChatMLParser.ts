@@ -29,7 +29,10 @@ export interface ChatMLParserResult {
   toolCallCounts: Map<string, number>;
   messageToToolCallNumbers: Map<number, number[]>;
   toolNameToDefinitionNumber: Map<string, number>;
+<<<<<<< HEAD
   inputMessageCount: number;
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 /**
@@ -157,7 +160,10 @@ export function useChatMLParser(
       toolCallCounts,
       messageToToolCallNumbers,
       toolNameToDefinitionNumber,
+<<<<<<< HEAD
       inputMessageCount,
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     };
   }, [parsedInput, parsedOutput, parsedMetadata, observationName]);
 }

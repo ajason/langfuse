@@ -17,7 +17,11 @@ import { useSelection } from "../contexts/SelectionContext";
 <<<<<<< HEAD
 import { useHandlePrefetchObservation } from "../hooks/useHandlePrefetchObservation";
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 import { type TreeNode } from "../lib/types";
 
 export function TraceTree() {
@@ -27,7 +31,11 @@ export function TraceTree() {
 <<<<<<< HEAD
   const { handleHover } = useHandlePrefetchObservation();
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   // Calculate root totals for heatmap color scaling
   // These values are used as the "max" reference for all nodes
@@ -71,7 +79,11 @@ export function TraceTree() {
 <<<<<<< HEAD
               onHover={() => handleHover(typedNode)}
 =======
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             />
           </VirtualizedTreeNodeWrapper>
         );

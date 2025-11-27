@@ -82,7 +82,11 @@ export function TraceGraphDataProvider({
   const maxStartTime = new Date(
     Math.max(...observationStartTimes, 0),
   ).toISOString();
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   const query = api.traces.getAgentGraphData.useQuery(
     {
@@ -104,7 +108,11 @@ export function TraceGraphDataProvider({
     },
     {
       enabled: observations.length > 0,
+<<<<<<< HEAD
 >>>>>>> 4783d11e4 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
+>>>>>>> ad3e2a4b1 (feat(trace2): new trace viewer UI for parallel testing (#10762))
       refetchOnWindowFocus: false,
       refetchOnMount: false,
       refetchOnReconnect: false,

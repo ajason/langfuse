@@ -11,6 +11,7 @@ import { useChatMLParser } from "./hooks/useChatMLParser";
 import { ChatMessageList } from "./components/ChatMessageList";
 import { SectionToolDefinitions } from "./components/SectionToolDefinitions";
 import { ViewModeToggle, type ViewMode } from "./components/ViewModeToggle";
+<<<<<<< HEAD
 import { Button } from "@/src/components/ui/button";
 import { ActionButton } from "@/src/components/ActionButton";
 import { BookOpen, X } from "lucide-react";
@@ -20,6 +21,11 @@ export type { ViewMode };
 const EMPTY_IO_ALERT_ID = "empty-io";
 const STORAGE_KEY = "dismissed-trace-view-notifications";
 
+=======
+
+export type { ViewMode };
+
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 export interface ExpansionStateProps {
   inputExpansionState?: Record<string, boolean> | boolean;
   outputExpansionState?: Record<string, boolean> | boolean;
@@ -137,8 +143,11 @@ export function IOPreview({
   setIsPrettyViewAvailable,
 }: IOPreviewProps) {
   const capture = usePostHogClientCapture();
+<<<<<<< HEAD
   const [dismissedTraceViewNotifications, setDismissedTraceViewNotifications] =
     useLocalStorage<string[]>(STORAGE_KEY, []);
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 
   // View state management
   const [localCurrentView, setLocalCurrentView] = useLocalStorage<ViewMode>(
@@ -164,7 +173,10 @@ export function IOPreview({
     toolCallCounts,
     messageToToolCallNumbers,
     toolNameToDefinitionNumber,
+<<<<<<< HEAD
     inputMessageCount,
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   } = useChatMLParser(input, output, metadata, observationName);
 
   // Notify parent about pretty view availability
@@ -214,6 +226,7 @@ export function IOPreview({
     onOutputExpansionChange,
   };
 
+<<<<<<< HEAD
   const showEmptyState =
     (parsedInput === null || parsedInput === undefined) &&
     (parsedOutput === null || parsedOutput === undefined) &&
@@ -221,6 +234,8 @@ export function IOPreview({
     !hideIfNull &&
     !dismissedTraceViewNotifications.includes(EMPTY_IO_ALERT_ID);
 
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
   return (
     <>
       <SectionToolDefinitions
@@ -252,7 +267,10 @@ export function IOPreview({
               media={media ?? []}
               currentView={selectedView}
               messageToToolCallNumbers={messageToToolCallNumbers}
+<<<<<<< HEAD
               inputMessageCount={inputMessageCount}
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             />
           </div>
         ) : (
@@ -263,6 +281,7 @@ export function IOPreview({
       <div style={{ display: selectedView === "json" ? "block" : "none" }}>
         <JsonInputOutputView {...jsonViewProps} />
       </div>
+<<<<<<< HEAD
       {showEmptyState && (
         <div className="relative mx-2 flex flex-col items-start gap-2 rounded-lg border border-dashed p-4">
           <Button
@@ -305,6 +324,8 @@ export function IOPreview({
           </ActionButton>
         </div>
       )}
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
     </>
   );
 }

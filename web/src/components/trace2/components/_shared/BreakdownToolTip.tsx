@@ -12,6 +12,7 @@ interface Details {
   [key: string]: number | undefined;
 }
 
+<<<<<<< HEAD
 /**
  * Aggregates usage or cost details by summing values based on key patterns.
  * Used to calculate input/output/total values from detailed breakdowns.
@@ -58,18 +59,26 @@ export const calculateAggregatedUsage = (
   return { input, output, total };
 };
 
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 interface BreakdownTooltipProps {
   details: Details | Details[];
   children: React.ReactNode;
   isCost?: boolean;
+<<<<<<< HEAD
   pricingTierName?: string;
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }
 
 export const BreakdownTooltip = ({
   details,
   children,
   isCost = false,
+<<<<<<< HEAD
   pricingTierName,
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
 }: BreakdownTooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -120,12 +129,15 @@ export const BreakdownTooltip = ({
                   {details.length === 1 ? "generation" : "generations"}
                 </span>
               )}
+<<<<<<< HEAD
               {pricingTierName && (
                 <div className="flex justify-between text-xs text-muted-foreground">
                   <span>Pricing Tier:</span>
                   <span className="font-mono">{pricingTierName}</span>
                 </div>
               )}
+=======
+>>>>>>> c1ce96097 (feat(trace2): new trace viewer UI for parallel testing (#10762))
             </div>
 
             {/* Input Section */}
