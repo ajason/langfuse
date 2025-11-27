@@ -10,6 +10,9 @@ export * from "./services/PromptService";
 export * from "./services/PromptService/types";
 export * from "./services/traces-ui-table-service";
 export * from "./services/InMemoryFilterService";
+export * from "./services/DatasetService";
+export * from "./datasets/schemaValidation";
+export * from "./datasets/schemaTypes";
 export * from "./evalJobConfigCache";
 export * from "./auth/apiKeys";
 export * from "./auth/invalidateApiKeys";
@@ -37,6 +40,7 @@ export * from "../server/ingestion/modelMatch";
 export * from "./ingestion/processEventBatch";
 export * from "../server/ingestion/validateAndInflateScore";
 export * from "../server/queries/public-api-filter-builder";
+export * from "../server/pricing-tiers";
 export * from "./redis/redis";
 export * from "./redis/traceUpsert";
 export * from "./redis/createEvalQueue";
@@ -98,7 +102,6 @@ export * from "./data-deletion/ingestionFileDeletion";
 export * from "./s3";
 
 // dataset run items
-export * from "./datasets";
 export * from "./dataset-run-items/addToDeleteQueue";
 
 // test utils
