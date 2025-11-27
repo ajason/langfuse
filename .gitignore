@@ -73,5 +73,10 @@ web/test-results/*
 # local config files
 *.local.*
 
+# claude meta files
 .claude/tsc-cache
+
+# Refactoring planning files (local only)
+**/.refactor/
+
 data
